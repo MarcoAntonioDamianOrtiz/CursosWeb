@@ -1,9 +1,14 @@
+
+// En tu archivo src/App.tsx
+import React from 'react';
+// import DashboardLayout from './layouts/DashboardLayout'; // Nueva ruta
+// import StatCard from './components/StatCard';           // Nueva ruta
 import { BrowserRouter, Routes, Route, Link } from 'react-router';
 import Portfolio from './portafolio'; // Mantenemos tu importación tal cual
 
 function Home() {
   return (
-<<<<<<< HEAD
+
     <div className="min-h-screen bg-slate-950 text-white flex flex-col items-center justify-center p-4">
       <h1 className="text-4xl font-extrabold mb-4 bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent">
         Bienvenido a Cursos JHONSON :D
@@ -17,13 +22,15 @@ function Home() {
       >
        Portafolio de Cursos →
       </Link>
-=======
+
     <div className="App">
       <h1>HOlá mundooooo</h1>
->>>>>>> 21f125ceb3111cd6f3698deb7160eece0b02e0c9
+    </div>
     </div>
   );
 }
+
+
 
 export default function App() {
   return (
