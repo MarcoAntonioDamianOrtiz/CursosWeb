@@ -1,7 +1,10 @@
+// En tu archivo src/App.tsx
+import React from 'react';
+import DashboardLayout from './layouts/DashboardLayout'; // Nueva ruta
+import StatCard from './components/StatCard';           // Nueva ruta
+
 export default function App() {
-  return (
-    <div className="App">
-      <h1>Olá, mundo!</h1>
-    </div>
-  );
+  // ... resto del código
+  //esta es una prueba 
+  //haciendo nuevo commit
 }
