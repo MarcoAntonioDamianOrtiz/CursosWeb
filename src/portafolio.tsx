@@ -1,6 +1,6 @@
-import React from 'react';
+import { Link } from 'react-router';
+import './index.css'; // 👈 AGREGA ESTA LÍNEA AQUÍ PARA IMPORTAR TUS ESTILOS
 
-// Definimos la estructura de un curso para TypeScript
 interface Curso {
   id: number;
   titulo: string;
@@ -10,91 +10,114 @@ interface Curso {
 }
 
 export default function Portfolio() {
-  // Array con al menos 4 cursos
   const cursos: Curso[] = [
     {
       id: 1,
-      titulo: "Desarrollo Web Moderno",
-      descripcion: "Aprende a construir aplicaciones web completas utilizando las últimas características de React y despliegues optimizados.",
+      titulo: "IRIS Core",
+      descripcion: "Collect metrics from thousands of devices on networks and present data in an easy to read format.",
       tecnologias: ["React", "Vite", "Tailwind CSS"],
       duracion: "40 horas"
     },
     {
       id: 2,
-      titulo: "Arquitectura de Software y Clean Code",
-      descripcion: "Domina los patrones de diseño, principios SOLID y las mejores prácticas para escribir código mantenible a gran escala.",
+      titulo: "IRIS Netflow",
+      descripcion: "Give engineers and managers the insights they need for stable and predictable networking environments.",
       tecnologias: ["TypeScript", "Node.js", "Jest"],
       duracion: "30 horas"
     },
     {
       id: 3,
-      titulo: "Desarrollo de Aplicaciones Móviles",
-      descripcion: "Construye apps nativas para iOS y Android compartiendo la misma base de código de forma fluida y eficiente.",
+      titulo: "IRIS CDR Insight",
+      descripcion: "Get Call Data Records in real-time on signal performance statistics crucial to monitoring your call routing.",
       tecnologias: ["Flutter", "Dart", "Firebase"],
       duracion: "45 horas"
     },
     {
       id: 4,
-      titulo: "Sistemas Backend y APIs con Python",
-      descripcion: "Diseña arquitecturas robustas del lado del servidor, optimización de base de datos y diseño de APIs RESTful.",
+      titulo: "IRIS Maps",
+      descripcion: "Powerful tool that generates visually detailed network reporting maps in real-time for quick data intake.",
       tecnologias: ["Python", "Django", "PostgreSQL"],
       duracion: "35 horas"
     }
   ];
 
   return (
-    <div className="min-h-screen bg-slate-900 text-slate-100 p-8 font-sans">
-      <div className="max-w-6xl mx-auto">
+    <div className="w-full min-h-screen bg-cyber-bg text-left p-6 md:p-16 block box-border font-sans">
+      <div className="max-w-6xl mx-auto block">
+        
         {/* Encabezado */}
-        <header className="mb-12 text-center md:text-left border-b border-slate-800 pb-6">
-          <h1 className="text-4xl font-extrabold tracking-tight bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent">
-            Mi Portafolio de Cursos
-          </h1>
-          <p className="mt-2 text-slate-400 text-lg">
-            Explora los programas disponibles y las tecnologías clave de cada uno.
-          </p>
+        <header className="mb-12 border-b border-slate-800 pb-6 flex justify-between items-center w-full">
+          <div className="text-left">
+            <h1 className="text-3xl font-bold text-white m-0 p-0 tracking-tight block text-left">
+              Mi Portafolio de Cursos
+            </h1>
+            <p className="text-slate-400 text-sm mt-2 block text-left">
+              Explora los programas disponibles y las tecnologías clave.
+            </p>
+          </div>
+          <Link 
+            to="/" 
+            className="text-xs font-mono uppercase bg-slate-900 text-slate-400 border border-slate-800 px-4 py-2 rounded-md hover:text-white transition-colors"
+          >
+            ← Volver
+          </Link>
         </header>
 
-        {/* Grid de Cursos (Se adapta de 1 a 3 columnas según el tamaño de pantalla) */}
-        <main className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* 🛠️ AQUÍ USAMOS TU UTILITY DEL CSS: portfolio-grid */}
+        <main className="portfolio-grid">
           {cursos.map((curso) => (
-            <section 
-              key={curso.id} 
-              className="bg-slate-800 rounded-xl p-6 border border-slate-700/50 shadow-xl hover:border-blue-500/50 transition-colors flex flex-col justify-between"
-            >
-              <div>
-                <div className="flex justify-between items-start gap-4 mb-4">
-                  <h2 className="text-xl font-bold text-white tracking-tight">
-                    {curso.titulo}
-                  </h2>
-                  <span className="bg-blue-500/10 text-blue-400 text-xs font-semibold px-2.5 py-1 rounded-full whitespace-nowrap">
+            
+            /* 🛠️ AQUÍ USAMOS TU UTILITY DEL CSS: course-card */
+            <section key={curso.id} className="course-card">
+              
+              <div className="w-full text-left flex flex-col items-start">
+                
+                {/* Cabecera interna de la tarjeta */}
+                <div className="mb-5 flex items-center justify-between w-full">
+                  <div className="w-8 h-8 rounded-full border border-slate-700 bg-slate-900/50 flex items-center justify-center">
+                    <span className="text-neon-rose text-xs font-mono">⚡</span>
+                  </div>
+                  <span className="text-[11px] font-mono bg-cyber-bg text-slate-400 px-2 py-0.5 rounded border border-slate-800">
                     {curso.duracion}
                   </span>
                 </div>
-                <p className="text-slate-400 text-sm leading-relaxed mb-6">
+
+                {/* Título de la tarjeta */}
+                <h2 className="text-xl font-semibold text-white tracking-wide m-0 mb-3 p-0 text-left block w-full">
+                  {curso.titulo}
+                </h2>
+
+                {/* Descripción */}
+                <p className="text-slate-400 text-sm leading-relaxed m-0 mb-4 text-left block w-full">
                   {curso.descripcion}
                 </p>
               </div>
 
-              {/* Tecnologías */}
-              <div>
-                <h3 className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">
-                  Tecnologías clave
-                </h3>
-                <div className="flex flex-wrap gap-2">
+              {/* Contenedor inferior de badges y enlace */}
+              <div className="w-full text-left mt-auto pt-4 border-t border-slate-800/50 flex flex-col items-start gap-4">
+                
+                {/* Badges de tecnologías */}
+                <div className="flex flex-wrap gap-2 w-full justify-start">
                   {curso.tecnologias.map((tech, index) => (
                     <span 
                       key={index} 
-                      className="bg-slate-900 text-slate-300 text-xs px-3 py-1 rounded-md font-mono"
+                      className="bg-cyber-bg text-slate-300 text-[11px] font-mono px-2 py-1 rounded border border-slate-800"
                     >
                       {tech}
                     </span>
                   ))}
                 </div>
+
+                {/* Enlace de acción "Learn more" */}
+                <span className="text-neon-rose hover:text-[#ff526f] text-sm font-medium tracking-wide inline-flex items-center gap-1 cursor-pointer transition-colors mt-2">
+                  Learn more <span className="text-base">→</span>
+                </span>
               </div>
+
             </section>
           ))}
         </main>
+
       </div>
     </div>
   );
