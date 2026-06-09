@@ -1,71 +1,97 @@
-/* 1. Importación obligatoria del motor de Tailwind v4 */
+/* index.css */
+
+/* Tailwind v4 */
 @import "tailwindcss";
 
-/* 2. Definición del tema y variables personalizadas */
+/* Tema personalizado */
 @theme {
   --color-cyber-bg: #1a1f2c;
   --color-cyber-card: #232936;
   --color-neon-rose: #e23b56;
 }
 
-/* 3. Reset global limpio sin propiedades CSS inexistentes */
-html, body, #root {
+/* Reset global */
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
   margin: 0;
   padding: 0;
   width: 100%;
-  min-height: 100vh; /* Corrige el error 'min-h-screen' */
-  background-color: #1a1f2c !important; /* Asegura el fondo oscuro IRIS */
-  color: #ffffff;
+  min-height: 100vh;
+  background-color: #1a1f2c;
+  color: white;
   font-family: system-ui, -apple-system, sans-serif;
 }
 
-/* ==========================================================================
-   Componentes y Utilidades Personalizadas (Diseño de las Cards)
-   ========================================================================== */
+/* =========================
+   GRID CENTRADO 2x2
+========================= */
 
-/* Contenedor Grid corregido (con columns en lugar de cols) */
-@utility portfolio-grid {
-  display: grid;
-  grid-template-columns: repeat(1, minmax(0, 1fr));
-  gap: 1.5rem;
+.portfolio-grid {
   width: 100%;
+
+  display: grid;
+
+  /* 2 columnas */
+  grid-template-columns: repeat(2, minmax(320px, 420px));
+
+  gap: 2rem;
+
+  justify-content: center;
+
   margin-top: 2.5rem;
-  box-sizing: border-box;
 }
 
-/* Reglas adaptativas para pantallas medianas y grandes */
-@media (min-width: 768px) {
-  @utility portfolio-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+/* Tablets */
+@media (max-width: 900px) {
+  .portfolio-grid {
+    grid-template-columns: repeat(1, minmax(320px, 500px));
   }
 }
 
-@media (min-width: 1024px) {
-  @utility portfolio-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-}
+/* =========================
+   CARDS
+========================= */
 
-/* Estilo físico e IDÉNTICO para las Tarjetas Oscuras */
-@utility course-card {
-  background-color: #232936 !important; /* Gris oscuro IRIS */
-  border: 1px solid #2e3545 !important;  /* Borde sutil delimitador */
-  border-radius: 0.5rem;                 /* Esquinas redondeadas suaves */
-  padding: 1.75rem;
-  box-sizing: border-box;
+.course-card {
+  background-color: #232936;
+
+  border: 1px solid #2e3545;
+
+  border-radius: 0.75rem;
+
+  padding: 2rem;
+
+  min-height: 320px;
+
+  width: 100%;
+
   display: flex;
+
   flex-direction: column;
+
   justify-content: space-between;
-  align-items: flex-start;
-  text-align: left;
-  /* Sombra profunda exacta a tus imágenes de referencia */
-  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+
+  box-shadow:
+    rgba(0, 0, 0, 0.3) 0px 19px 38px,
+    rgba(0, 0, 0, 0.22) 0px 15px 12px;
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
-/* Efecto Hover interactivo con brillo neón */
-@utility course-card:hover {
-  border-color: rgba(226, 59, 86, 0.8) !important; /* Brillo rosa neón */
-  transform: translateY(-5px);                     /* Eleva ligeramente la tarjeta */
-  box-shadow: rgba(226, 59, 86, 0.15) 0px 20px 25px -5px;
+.course-card:hover {
+  border-color: rgba(226, 59, 86, 0.8);
+
+  transform: translateY(-6px);
+
+  box-shadow:
+    rgba(226, 59, 86, 0.15) 0px 20px 25px -5px,
+    rgba(0, 0, 0, 0.3) 0px 19px 38px;
 }

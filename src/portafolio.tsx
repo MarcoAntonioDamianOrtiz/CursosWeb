@@ -1,5 +1,5 @@
 import { Link } from 'react-router';
-import './index.css'; // 👈 AGREGA ESTA LÍNEA AQUÍ PARA IMPORTAR TUS ESTILOS
+import './index.css'; // Importación de tus estilos globales y utilidades
 
 interface Curso {
   id: number;
@@ -42,8 +42,9 @@ export default function Portfolio() {
   ];
 
   return (
-    <div className="w-full min-h-screen bg-cyber-bg text-left p-6 md:p-16 block box-border font-sans">
-      <div className="max-w-6xl mx-auto block">
+    // Centramos el layout y usamos la paleta fija para evitar conflictos con el compilador v4
+    <div className="w-full min-h-screen bg-[#1a1f2c] text-white p-6 md:p-16 flex flex-col items-center justify-start box-border font-sans">
+      <div className="w-full max-w-6xl mx-auto block">
         
         {/* Encabezado */}
         <header className="mb-12 border-b border-slate-800 pb-6 flex justify-between items-center w-full">
@@ -63,11 +64,11 @@ export default function Portfolio() {
           </Link>
         </header>
 
-        {/* 🛠️ AQUÍ USAMOS TU UTILITY DEL CSS: portfolio-grid */}
+        {/* 🛠️ Contenedor de grilla (Llama a tu @utility portfolio-grid de index.css) */}
         <main className="portfolio-grid">
           {cursos.map((curso) => (
             
-            /* 🛠️ AQUÍ USAMOS TU UTILITY DEL CSS: course-card */
+            /* 🛠️ Tarjeta física (Llama a tu @utility course-card de index.css) */
             <section key={curso.id} className="course-card">
               
               <div className="w-full text-left flex flex-col items-start">
@@ -75,9 +76,10 @@ export default function Portfolio() {
                 {/* Cabecera interna de la tarjeta */}
                 <div className="mb-5 flex items-center justify-between w-full">
                   <div className="w-8 h-8 rounded-full border border-slate-700 bg-slate-900/50 flex items-center justify-center">
-                    <span className="text-neon-rose text-xs font-mono">⚡</span>
+                    {/* Color rosa exacto aplicado mediante hex nativo */}
+                    <span className="text-[#e23b56] text-xs font-mono">⚡</span>
                   </div>
-                  <span className="text-[11px] font-mono bg-cyber-bg text-slate-400 px-2 py-0.5 rounded border border-slate-800">
+                  <span className="text-[11px] font-mono bg-[#1a1f2c] text-slate-400 px-2 py-0.5 rounded border border-slate-800">
                     {curso.duracion}
                   </span>
                 </div>
@@ -101,15 +103,15 @@ export default function Portfolio() {
                   {curso.tecnologias.map((tech, index) => (
                     <span 
                       key={index} 
-                      className="bg-cyber-bg text-slate-300 text-[11px] font-mono px-2 py-1 rounded border border-slate-800"
+                      className="bg-[#1a1f2c] text-slate-300 text-[11px] font-mono px-2 py-1 rounded border border-slate-800"
                     >
                       {tech}
                     </span>
                   ))}
                 </div>
 
-                {/* Enlace de acción "Learn more" */}
-                <span className="text-neon-rose hover:text-[#ff526f] text-sm font-medium tracking-wide inline-flex items-center gap-1 cursor-pointer transition-colors mt-2">
+                {/* Enlace de acción "Learn more" idéntico al diseño de referencia */}
+                <span className="text-[#e23b56] hover:text-[#ff526f] text-sm font-medium tracking-wide inline-flex items-center gap-1 cursor-pointer transition-colors mt-2">
                   Learn more <span className="text-base">→</span>
                 </span>
               </div>
