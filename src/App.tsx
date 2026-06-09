@@ -1,3 +1,8 @@
+
+// En tu archivo src/App.tsx
+import React from 'react';
+// import DashboardLayout from './layouts/DashboardLayout'; // Nueva ruta
+// import StatCard from './components/StatCard';           // Nueva ruta
 import { BrowserRouter, Routes, Route, Link } from 'react-router';
 import Portfolio from './portafolio';
 
@@ -21,6 +26,8 @@ function Home() {
     </div>
   );
 }
+
+
 
 export default function App() {
   return (
