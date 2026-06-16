@@ -2,7 +2,7 @@
 // import DashboardLayout from './layouts/DashboardLayout'; // Nueva ruta
 // import StatCard from './components/StatCard';           // Nueva ruta
 import { BrowserRouter, Routes, Route, Link } from 'react-router';
-import Portfolio from './layouts/portafolio.tsx'; // Importamos el nuevo layout de portafolio
+import Portfolio from '../layouts/portafolio.tsx'; // Importamos el nuevo layout de portafolio
 
 
 function Home() {
