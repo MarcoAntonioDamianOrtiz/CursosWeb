@@ -1,6 +1,5 @@
 import { Link } from 'react-router';
-import './index.css'; // Importación de tus estilos globales y utilidades
-
+import "../index.css";
 interface Curso {
   id: number;
   titulo: string;
