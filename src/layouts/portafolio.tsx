@@ -46,22 +46,13 @@ export default function Portfolio() {
       <div className="w-full max-w-6xl mx-auto block">
         
         {/* Encabezado */}
-        <header className="mb-12 border-b border-slate-800 pb-6 flex justify-between items-center w-full">
-          <div className="text-left">
-            <h1 className="text-3xl font-bold text-white m-0 p-0 tracking-tight block text-left">
-              Mi Portafolio de Cursos
-            </h1>
-            <p className="text-slate-400 text-sm mt-2 block text-left">
-              Explora los programas disponibles y las tecnologías clave.
-            </p>
-          </div>
-          <Link 
-            to="/" 
-            className="text-xs font-mono uppercase bg-slate-900 text-slate-400 border border-slate-800 px-4 py-2 rounded-md hover:text-white transition-colors"
-          >
-            ← Volver
-          </Link>
-          
+        <header className="mb-12 text-center md:text-left border-b border-slate-800 pb-6">
+          <h1 className="text-4xl font-extrabold tracking-tight bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent">
+            Mi Portafolio de Cursos
+          </h1>
+          <p className="mt-2 text-slate-400 text-lg">
+            Explora los programas disponibles y las tecnologías clave de cada uno.
+          </p>
         </header>
 
         {/* 🛠️ Contenedor de grilla (Llama a tu @utility portfolio-grid de index.css) */}

@@ -1,10 +1,8 @@
 // En tu archivo src/App.tsx
 // import DashboardLayout from './layouts/DashboardLayout'; // Nueva ruta
 // import StatCard from './components/StatCard';           // Nueva ruta
-import { BrowserRouter, Routes, Route, Link } from 'react-router';
-import Portfolio from '../layouts/portafolio.tsx'; // Importamos el nuevo layout de portafolio
-import Conocenos from '../layouts/conocenos.tsx'; // Importamos el nuevo layout de conocenos
-
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import Portfolio from "../layouts/portafolio"; // Mantenemos tu importación tal cual
 
 function Home() {
   return (
