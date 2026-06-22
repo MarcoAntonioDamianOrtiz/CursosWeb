@@ -1,6 +1,8 @@
-import { BrowserRouter, Link, Route, Routes } from 'react-router';
-import Contacto from './contacto';
-import Portfolio from './portafolio';
+// En tu archivo src/App.tsx
+// import DashboardLayout from './layouts/DashboardLayout'; // Nueva ruta
+// import StatCard from './components/StatCard';           // Nueva ruta
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import Portfolio from "../layouts/portafolio"; // Mantenemos tu importación tal cual
 
 function Home() {
   return (
@@ -35,7 +37,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/portfolio" element={<Portfolio />} />
-        <Route path="/contacto" element={<Contacto />} />
+        <Route path="/conocenos" element={<Conocenos />} />
       </Routes>
     </BrowserRouter>
   );
