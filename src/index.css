@@ -27,6 +27,10 @@ body,
   font-family: system-ui, -apple-system, sans-serif;
 }
 
+p {
+  margin: 0;
+}
+
 /* =========================
    GRID CENTRADO 2x2
 ========================= */

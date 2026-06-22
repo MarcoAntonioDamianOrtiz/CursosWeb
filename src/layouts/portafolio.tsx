@@ -1,4 +1,3 @@
-import { Link } from 'react-router';
 import "../index.css";
 interface Curso {
   id: number;
