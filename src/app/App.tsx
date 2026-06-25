@@ -1,8 +1,8 @@
-import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import Contacto from "../contacto";
-import Conocenos from "../layouts/conocenos";
 import Portfolio from "../layouts/portafolio";
-import DashboardPage from "../pages/DashboardPage"; // 1. Importamos el Dashboard
+import DashboardPage from "../pages/DashboardPage";
+
 
 function Home() {
   return (
@@ -46,7 +46,6 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/portfolio" element={<Portfolio />} />
-        <Route path="/conocenos" element={<Conocenos />} />
         <Route path="/contacto" element={<Contacto />} />
         {/* 3. Registramos la ruta del Dashboard */}
         <Route path="/dashboard" element={<DashboardPage />} />

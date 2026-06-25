@@ -55,25 +55,25 @@ const contactCards: ContactCard[] = [
     icon: 'mail',
     title: 'Correo electronico',
     description: 'Escribenos para resolver dudas sobre cursos, pagos o acceso.',
-    action: 'academia@cursosjhonson.com',
+    action: 'proximamente',
   },
   {
     icon: 'phone',
     title: 'Telefono',
     description: 'Atencion directa para estudiantes y empresas.',
-    action: '+52 55 1234 9876',
+    action: '+52 241 108 7863',
   },
   {
     icon: 'pin',
     title: 'Direccion',
-    description: 'Oficina virtual con soporte para Mexico y Latinoamerica.',
-    action: 'Ciudad de Mexico, MX',
+    description: 'A El Carmen Xalpatlahuaya s/n, 90513 Huamantla, Tlax.',
+    action: 'Ciudad de Apizaco, Tlaxcala, Mexico',
   },
   {
     icon: 'discord',
     title: 'Comunidad / Discord',
     description: 'Conecta con mentores y alumnos en tiempo real.',
-    action: 'discord.gg/cursosjhonson',
+    action: 'proximamente',
   },
 ];
 
@@ -617,8 +617,7 @@ export default function Contacto() {
               </p>
               <div className="mt-6 space-y-3 text-sm text-slate-300">
                 <p>
-                  <span className="font-semibold text-white">Direccion:</span> Ciudad de Mexico,
-                  Mexico. Atencion remota para toda Latinoamerica.
+                  <span className="font-semibold text-white">Direccion:</span> A El Carmen Xalpatlahuaya s/n, 90513 Huamantla, Tlax.
                 </p>
                 <p>
                   <span className="font-semibold text-white">Horarios:</span> Lunes a viernes,
@@ -648,7 +647,7 @@ export default function Contacto() {
             <h2 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
               Listo para elegir el curso correcto?
             </h2>
-            <p className="mx-auto mt-4 max-w-2xl text-violet-100">
+            <p className="mx-auto mt-4 max-x-2xl text-violet-100">
               Nuestro equipo puede ayudarte a encontrar una ruta clara y realista para avanzar en
               desarrollo web, backend, mobile o arquitectura.
             </p>
