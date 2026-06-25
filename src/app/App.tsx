@@ -2,6 +2,7 @@ import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 import Contacto from "../contacto";
 import Conocenos from "../layouts/conocenos";
 import Portfolio from "../layouts/portafolio";
+import DashboardPage from "../pages/DashboardPage"; // 1. Importamos el Dashboard
 
 function Home() {
   return (
@@ -12,13 +13,22 @@ function Home() {
       <p className="mb-8 max-w-md text-center text-slate-400">
         Ve mas de nuestros cursos aqui:
       </p>
-      <div className="flex flex-col gap-3 sm:flex-row">
+      <div className="flex flex-col gap-3 sm:flex-row items-center">
         <Link
           to="/portfolio"
           className="rounded-lg bg-blue-600 px-6 py-3 font-medium text-white shadow-lg shadow-blue-600/20 transition-colors hover:bg-blue-500"
         >
           Portafolio de Cursos
         </Link>
+        
+        {/* 2. Nuevo botón hacia el Dashboard con un estilo cyan/blue brillante */}
+        <Link
+          to="/dashboard"
+          className="rounded-lg bg-gradient-to-r from-cyan-500 to-blue-600 px-6 py-3 font-semibold text-white shadow-lg shadow-cyan-500/20 transition-all hover:opacity-90"
+        >
+          Mi Panel (Dashboard)
+        </Link>
+
         <Link
           to="/contacto"
           className="rounded-lg bg-violet-600 px-6 py-3 font-medium text-white shadow-lg shadow-violet-600/20 transition-colors hover:bg-violet-500"
@@ -38,6 +48,8 @@ export default function App() {
         <Route path="/portfolio" element={<Portfolio />} />
         <Route path="/conocenos" element={<Conocenos />} />
         <Route path="/contacto" element={<Contacto />} />
+        {/* 3. Registramos la ruta del Dashboard */}
+        <Route path="/dashboard" element={<DashboardPage />} />
       </Routes>
     </BrowserRouter>
   );
