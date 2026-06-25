@@ -3,6 +3,7 @@
 // import StatCard from './components/StatCard';           // Nueva ruta
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import Portfolio from "../layouts/portafolio"; // Mantenemos tu importación tal cual
+import Contacto from "../contacto";
 
 function Home() {
   return (
@@ -37,7 +38,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/portfolio" element={<Portfolio />} />
-        <Route path="/conocenos" element={<Conocenos />} />
+        <Route path="/contacto" element={<Contacto />} />
       </Routes>
     </BrowserRouter>
   );
