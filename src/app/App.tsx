@@ -1,27 +1,30 @@
-// En tu archivo src/App.tsx
-// import DashboardLayout from './layouts/DashboardLayout'; // Nueva ruta
-// import StatCard from './components/StatCard';           // Nueva ruta
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
-import Portfolio from "../layouts/portafolio"; // Mantenemos tu importación tal cual
+import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
+import Contacto from "../contacto";
+import Conocenos from "../layouts/conocenos";
+import Portfolio from "../layouts/portafolio";
 
 function Home() {
   return (
-    <div className="min-h-screen bg-slate-950 text-white flex flex-col items-center justify-center p-4">
-      <h1 className="text-4xl font-extrabold mb-4 bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent">
+    <div className="flex min-h-screen flex-col items-center justify-center bg-slate-950 p-4 text-white">
+      <h1 className="mb-4 text-center text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-violet-400 via-fuchsia-400 to-blue-400">
         Bienvenido a Cursos JHONSON :D
       </h1>
-      <p className="text-slate-400 mb-8 max-w-md text-center">
-        Ve más de nuestros cursos aquí:
+      <p className="mb-8 max-w-md text-center text-slate-400">
+        Ve mas de nuestros cursos aqui:
       </p>
-      <Link
-        to="/portfolio"
-        className="bg-blue-600 hover:bg-blue-500 text-white font-medium px-6 py-3 rounded-lg transition-colors shadow-lg shadow-blue-600/20"
-      >
-        Portafolio de Cursos →
-      </Link>
-
-      <div className="App">
-        <h1>HOlá mundooooo</h1>
+      <div className="flex flex-col gap-3 sm:flex-row">
+        <Link
+          to="/portfolio"
+          className="rounded-lg bg-blue-600 px-6 py-3 font-medium text-white shadow-lg shadow-blue-600/20 transition-colors hover:bg-blue-500"
+        >
+          Portafolio de Cursos
+        </Link>
+        <Link
+          to="/contacto"
+          className="rounded-lg bg-violet-600 px-6 py-3 font-medium text-white shadow-lg shadow-violet-600/20 transition-colors hover:bg-violet-500"
+        >
+          Contacto
+        </Link>
       </div>
     </div>
   );
@@ -33,6 +36,8 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/portfolio" element={<Portfolio />} />
+        <Route path="/conocenos" element={<Conocenos />} />
+        <Route path="/contacto" element={<Contacto />} />
       </Routes>
     </BrowserRouter>
   );
