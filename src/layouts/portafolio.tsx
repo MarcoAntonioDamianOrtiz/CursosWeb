@@ -1,4 +1,6 @@
 import "../index.css";
+import Header from "../components/Header";
+
 interface Curso {
   id: number;
   titulo: string;
@@ -41,7 +43,9 @@ export default function Portfolio() {
 
   return (
     // Centramos el layout y usamos la paleta fija para evitar conflictos con el compilador v4
-    <div className="w-full min-h-screen bg-[#1a1f2c] text-white p-6 md:p-16 flex flex-col items-center justify-start box-border font-sans">
+    <div className="w-full min-h-screen bg-[#1a1f2c] text-white box-border font-sans">
+      <Header active="cursos" />
+      <div className="p-6 md:p-16 flex flex-col items-center justify-start">
       <div className="w-full max-w-6xl mx-auto block">
         
         {/* Encabezado */}
@@ -110,6 +114,7 @@ export default function Portfolio() {
           ))}
         </main>
 
+      </div>
       </div>
     </div>
   );

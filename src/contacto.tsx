@@ -1,5 +1,6 @@
 import { type FormEvent, useState } from 'react';
 import { Link } from 'react-router-dom';
+import Header from './components/Header';
 
 const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xkolnvvo';
 
@@ -55,25 +56,25 @@ const contactCards: ContactCard[] = [
     icon: 'mail',
     title: 'Correo electronico',
     description: 'Escribenos para resolver dudas sobre cursos, pagos o acceso.',
-    action: 'proximamente',
+    action: 'academia@cursosjhonson.com',
   },
   {
     icon: 'phone',
     title: 'Telefono',
     description: 'Atencion directa para estudiantes y empresas.',
-    action: '+52 241 108 7863',
+    action: '+52 55 1234 9876',
   },
   {
     icon: 'pin',
     title: 'Direccion',
-    description: 'A El Carmen Xalpatlahuaya s/n, 90513 Huamantla, Tlax.',
-    action: 'Ciudad de Apizaco, Tlaxcala, Mexico',
+    description: 'Oficina virtual con soporte para Mexico y Latinoamerica.',
+    action: 'Ciudad de Mexico, MX',
   },
   {
     icon: 'discord',
     title: 'Comunidad / Discord',
     description: 'Conecta con mentores y alumnos en tiempo real.',
-    action: 'proximamente',
+    action: 'discord.gg/cursosjhonson',
   },
 ];
 
@@ -320,24 +321,7 @@ export default function Contacto() {
 
   return (
     <div className="min-h-screen bg-slate-950 font-sans text-slate-100">
-      <header className="border-b border-white/10 bg-slate-950/90 backdrop-blur">
-        <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-5">
-          <Link to="/" className="text-lg font-extrabold tracking-tight text-white">
-            Cursos JHONSON
-          </Link>
-          <div className="flex items-center gap-3 text-sm font-medium">
-            <Link to="/portfolio" className="text-slate-300 transition-colors hover:text-white">
-              Cursos
-            </Link>
-            <Link
-              to="/contacto"
-              className="rounded-lg bg-violet-600 px-4 py-2 text-white shadow-lg shadow-violet-600/20 transition-colors hover:bg-violet-500"
-            >
-              Contacto
-            </Link>
-          </div>
-        </nav>
-      </header>
+      <Header active="contacto" />
 
       <main>
         <section className="relative overflow-hidden px-6 py-20 sm:py-24">
@@ -348,7 +332,7 @@ export default function Contacto() {
                 Hablemos de tu siguiente salto profesional
               </h1>
               <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-slate-300 lg:mx-0">
-                Contacta al equipo de Cursos JHONSON y recibe orientacion clara sobre programas,
+                Contacta al equipo de Academix y recibe orientacion clara sobre programas,
                 inscripciones, soporte o rutas de aprendizaje para tu perfil.
               </p>
               <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row lg:justify-start">
@@ -617,7 +601,8 @@ export default function Contacto() {
               </p>
               <div className="mt-6 space-y-3 text-sm text-slate-300">
                 <p>
-                  <span className="font-semibold text-white">Direccion:</span> A El Carmen Xalpatlahuaya s/n, 90513 Huamantla, Tlax.
+                  <span className="font-semibold text-white">Direccion:</span> Ciudad de Mexico,
+                  Mexico. Atencion remota para toda Latinoamerica.
                 </p>
                 <p>
                   <span className="font-semibold text-white">Horarios:</span> Lunes a viernes,
@@ -647,7 +632,7 @@ export default function Contacto() {
             <h2 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
               Listo para elegir el curso correcto?
             </h2>
-            <p className="mx-auto mt-4 max-x-2xl text-violet-100">
+            <p className="mx-auto mt-4 max-w-2xl text-violet-100">
               Nuestro equipo puede ayudarte a encontrar una ruta clara y realista para avanzar en
               desarrollo web, backend, mobile o arquitectura.
             </p>
@@ -659,7 +644,7 @@ export default function Contacto() {
                 Quiero asesoria
               </a>
               <Link
-                to="/portfolio"
+                to="/cursos"
                 className="inline-flex items-center justify-center rounded-lg border border-white/30 bg-white/10 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/20"
               >
                 Explorar cursos
@@ -671,12 +656,12 @@ export default function Contacto() {
 
       <footer className="border-t border-white/10 px-6 py-8">
         <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 text-sm text-slate-400 sm:flex-row">
-          <p>Cursos JHONSON. Formacion moderna para equipos y profesionales.</p>
+          <p>Academix. Formacion moderna para equipos y profesionales.</p>
           <div className="flex gap-4">
             <Link to="/" className="transition hover:text-white">
               Inicio
             </Link>
-            <Link to="/portfolio" className="transition hover:text-white">
+            <Link to="/cursos" className="transition hover:text-white">
               Cursos
             </Link>
             <Link to="/contacto" className="transition hover:text-white">
