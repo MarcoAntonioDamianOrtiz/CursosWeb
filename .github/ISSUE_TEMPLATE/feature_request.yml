@@ -1,0 +1,53 @@
+name: 🚀 Feature Request
+description: Sugiere una idea o una nueva funcionalidad para este proyecto.
+title: "[Feature]: "
+labels: ["enhancement", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ¡Gracias por tomarte el tiempo de sugerir una mejora! Por favor, completa el siguiente formulario para ayudarnos a entender mejor tu propuesta.
+
+  - type: textarea
+    id: problem-description
+    attributes:
+      label: ¿Tu sugerencia está relacionada con un problema?
+      description: Describe de forma clara y concisa cuál es el problema o la limitación actual (por ejemplo, "Me resulta difícil hacer X cosa porque...").
+      placeholder: Una descripción clara del problema...
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposed-solution
+    attributes:
+      label: Solución propuesta
+      description: Describe detalladamente la funcionalidad o el cambio que te gustaría ver.
+      placeholder: Me gustaría que la aplicación pudiera...
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives-considered
+    attributes:
+      label: Alternativas consideradas
+      description: Cuéntanos si has pensado en otras soluciones alternativas o soluciones temporales (workarounds).
+      placeholder: Intenté usar X herramienta, pero no funcionó porque...
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Contexto adicional o capturas de pantalla
+      description: Añade aquí cualquier otro contexto, maquetas (mockups) o capturas de pantalla que puedan ayudar a ilustrar tu idea.
+      placeholder: Enlaces, imágenes o notas extra...
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: code-of-conduct
+    attributes:
+      label: Código de conducta
+      options:
+        - label: Me comprometo a seguir el Código de Conducta de este proyecto.
+          required: true
